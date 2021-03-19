@@ -2,10 +2,6 @@
 Khan academy cheat v0.0.1
 
 Author: @Astroz
-
-Some credits to Pnyx
-For generateString(lazy to make it)
-FormattedAnswer(lazy to make it too)
 */
 
 /*Setting latex up*/
@@ -138,9 +134,11 @@ function Display(text) {
     ) {
       setTimeout(function () {
         if (i > 0) {
-          AnswerCopenent.contentWindow.document.body
-            .getElementsByTagName("annotation")[0]
-            .remove();
+          try {
+            AnswerCopenent.contentWindow.document.body
+              .getElementsByTagName("annotation")[0]
+              .remove();
+          } catch (err) {}
         }
       }, 50);
     }
@@ -170,39 +168,95 @@ function Display(text) {
   document.getElementById(HolderId).appendChild(Break);
   document.getElementById(HolderId).appendChild(Break_);
   /*Clear window if closed*/
-  let Old = document.querySelector(
-    "#__MODAL_PARENT__ > div > div._1bdwasy > div > div._jp1ud6f > div._1fvz8ou > div._tkai5iq > div"
-  ).children[0].onclick;
-  document.querySelector(
-    "#__MODAL_PARENT__ > div > div._1bdwasy > div > div._jp1ud6f > div._1fvz8ou > div._tkai5iq > div"
-  ).children[0].onclick = function () {
-    for (i = 0; i <= document.getElementsByClassName(SaltAnswer).length; i++) {
-      setTimeout(function () {
-        if (i > 0) {
-          document.getElementsByClassName(SaltAnswer)[0].remove();
-        }
-      }, 50);
-    }
-    for (
-      i = 0;
-      i <= document.getElementsByClassName("break!!" + SaltAnswer).length;
-      i++
-    ) {
-      setTimeout(function () {
-        if (i > 0) {
-          document.getElementsByClassName("break!!" + SaltAnswer)[0].remove();
-        }
-      }, 50);
-    }
+
+  if (
     document.querySelector(
       "#__MODAL_PARENT__ > div > div._1bdwasy > div > div._jp1ud6f > div._1fvz8ou > div._tkai5iq > div"
-    ).children[0].onclick = Old;
-    document
-      .querySelector(
+    ) == null
+  ) {
+    setTimeout(() => {
+      for (
+        i = 0;
+        i <= document.getElementsByClassName(SaltAnswer).length;
+        i++
+      ) {
+        setTimeout(function () {
+          if (i > 0) {
+            try {
+              document.getElementsByClassName(SaltAnswer)[0].remove();
+            } catch (err) {
+              if (err) throw err;
+            }
+          }
+        }, 50);
+      }
+      for (
+        i = 0;
+        i <= document.getElementsByClassName("break!!" + SaltAnswer).length;
+        i++
+      ) {
+        setTimeout(function () {
+          if (i > 0) {
+            try {
+              document
+                .getElementsByClassName("break!!" + SaltAnswer)[0]
+                .remove();
+            } catch (err) {
+              if (err) throw err;
+            }
+          }
+        }, 50);
+      }
+    }, 20 * 1000);
+  } else {
+    let Old = document.querySelector(
+      "#__MODAL_PARENT__ > div > div._1bdwasy > div > div._jp1ud6f > div._1fvz8ou > div._tkai5iq > div"
+    ).children[0].onclick;
+    document.querySelector(
+      "#__MODAL_PARENT__ > div > div._1bdwasy > div > div._jp1ud6f > div._1fvz8ou > div._tkai5iq > div"
+    ).children[0].onclick = function () {
+      for (
+        i = 0;
+        i <= document.getElementsByClassName(SaltAnswer).length;
+        i++
+      ) {
+        setTimeout(function () {
+          if (i > 0) {
+            try {
+              document.getElementsByClassName(SaltAnswer)[0].remove();
+            } catch (err) {
+              if (err) throw err;
+            }
+          }
+        }, 50);
+      }
+      for (
+        i = 0;
+        i <= document.getElementsByClassName("break!!" + SaltAnswer).length;
+        i++
+      ) {
+        setTimeout(function () {
+          if (i > 0) {
+            try {
+              document
+                .getElementsByClassName("break!!" + SaltAnswer)[0]
+                .remove();
+            } catch (err) {
+              if (err) throw err;
+            }
+          }
+        }, 50);
+      }
+      document.querySelector(
         "#__MODAL_PARENT__ > div > div._1bdwasy > div > div._jp1ud6f > div._1fvz8ou > div._tkai5iq > div"
-      )
-      .children[0].click();
-  };
+      ).children[0].onclick = Old;
+      document
+        .querySelector(
+          "#__MODAL_PARENT__ > div > div._1bdwasy > div > div._jp1ud6f > div._1fvz8ou > div._tkai5iq > div"
+        )
+        .children[0].click();
+    };
+  }
 }
 
 /*Replacement*/
