@@ -177,6 +177,13 @@ function Display(text) {
         }
       }, 50);
     }
+    for (i = 0; i <= document.getElementsByTagName("br").length; i++) {
+      setTimeout(function () {
+        if (i > 0) {
+          document.getElementsByTagName("br")[0].remove();
+        }
+      }, 50);
+    }
     document.querySelector(
       "#__MODAL_PARENT__ > div > div._1bdwasy > div > div._jp1ud6f > div._1fvz8ou > div._tkai5iq > div"
     ).children[0].onclick = Old;
