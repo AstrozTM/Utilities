@@ -3,8 +3,9 @@ Khan academy cheat v0.0.1
 
 Author: @Astroz
 
-Some credits to Pnyx (idk his github)
-His website: https://pnyx.dev/
+Some credits to Pnyx
+For generateString(lazy to make it)
+FormattedAnswer(lazy to make it too)
 */
 
 /*Setting latex up*/
