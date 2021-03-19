@@ -108,6 +108,8 @@ function Display(text) {
   let AnswerCopenentText = document.createElement("AAAAAA");
   let Break = document.createElement("br");
   let Break_ = document.createElement("br");
+  Break_.className = "break!!" + SaltAnswer;
+  Break.className = "break!!" + SaltAnswer;
   /*Setting an iframe*/
   AnswerCopenent.className = SaltAnswer;
   AnswerCopenent.style =
@@ -177,10 +179,14 @@ function Display(text) {
         }
       }, 50);
     }
-    for (i = 0; i <= document.getElementsByTagName("br").length; i++) {
+    for (
+      i = 0;
+      i <= document.getElementsByClassName("break!!" + SaltAnswer).length;
+      i++
+    ) {
       setTimeout(function () {
         if (i > 0) {
-          document.getElementsByTagName("br")[0].remove();
+          document.getElementsByClassName("break!!" + SaltAnswer)[0].remove();
         }
       }, 50);
     }
