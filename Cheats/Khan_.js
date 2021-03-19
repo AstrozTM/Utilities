@@ -2,6 +2,9 @@
 Khan academy cheat v0.0.1
 
 Author: @Astroz
+
+Some credits to Pnyx (idk his github)
+His website: https://pnyx.dev/
 */
 
 /*Setting latex up*/
