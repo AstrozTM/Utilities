@@ -1,2 +1,2 @@
 # Utilities
-This are random cheats/utilities for websites
+This are random cheats/utilities for websites/softwares
